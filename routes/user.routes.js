@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const {
   registerUser,
   loginUser,
@@ -12,7 +13,7 @@ const {
 router.post('/register', registerUser);
 router.post('/login', loginUser);
 
-// Protected routes (skip auth for exam)
+// Protected routes (auth skipped for exam)
 router.get('/', getUsers);
 router.put('/:id', updateUser);
 router.delete('/:id', deleteUser);

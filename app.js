@@ -6,12 +6,17 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const userRoutes = require('./routes/user.routes');
+const postRoutes = require('./routes/post.routes');
+const kycRoutes = require('./routes/kyc.routes');
+
 
 // Middleware
 app.use(express.json());
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
+app.use('/api/kyc', kycRoutes);
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
