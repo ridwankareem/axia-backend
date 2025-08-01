@@ -20,6 +20,11 @@ app.use('/api/posts', postRoutes);
 app.use('/api/kyc', kycRoutes);
 app.use('/api/upload', uploadRoutes);
 
+app.get('/', (req, res) => {
+  res.send('🚀 Axia Backend API is running.');
+});
+
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ Connected to MongoDB'))
